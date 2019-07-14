@@ -4,13 +4,13 @@ def read_reps(info, desc)
     sleep(1)
   1.upto(num) do |i|
     `say "#{i}"`
-    sleep(1.5)
+    sleep(1.2)
     if i == num 
         `say "all done with #{num} repetitions"`
     else
         `say "and."`
     end
-    sleep(1)
+    sleep(0.8)
   end
   puts "finished #{num} reps"
 end
@@ -18,9 +18,9 @@ end
 def reps_with_rest(info, desc)
   read_reps(info, desc)
   `say "let's rest for 60 seconds.  You can add more weight for your next set which is intensity of level #{info[:level] + 1}"`
-  sleep(35)
+  sleep(25)
   `say "get ready, your 60 second break is almost over"`
-  sleep(15)
+  sleep(10)
   `say "rest is over"`
 end
 
@@ -44,15 +44,15 @@ def run_program(areas)
   areas.each_with_index do |area, index|
       puts "Starting #{area} exercises"
       `say "Get ready for #{area} exercises.  You have 5 seconds to get in position."`
-      sleep(5)
+      sleep(4)
       set(area)
       if area == areas.last
           `say "Yay!  You're all done!"`
       else
           `say "get ready to do #{areas[index+1]} next, after this 2 minute break.  You might want to drink some water to stay hydrated."`
-          sleep(50)
+          sleep(40)
           `say "one more minute of rest"`
-          sleep(60 - 5)
+          sleep(50 - 5)
       end
       puts "Time elapsed after #{area} exercises: #{program_started - Time.now}"
   end

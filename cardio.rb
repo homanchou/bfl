@@ -10,7 +10,9 @@ def six_seven_eight_nine()
   sleep(60)
 end
 
-`say 'hi, here we go'`
+`say "hi, let's do cardio.  You have 5 seconds to get ready"`
+  sleep(5)
+
 `say 'two minutes at level 5'`
 sleep(60)
 `say 'one more minute at level 5'`
